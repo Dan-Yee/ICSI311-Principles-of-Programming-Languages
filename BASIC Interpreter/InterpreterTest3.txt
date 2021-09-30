@@ -1,0 +1,168 @@
+PRINT "EXTRA COMPREHENSIVE TEST FILE"
+PRINT ""
+word$ = "Albany"
+randomInt = RANDOM()
+leftTest$ = LEFT$("Washington",3)
+midTest$ = MID$("Washington",3,2)
+floatStr$ = NUM$(3.14159265358979)
+valFloat% = VAL%("3.14159265358979")
+
+namePrompt$ = "Please enter your name "
+INPUT namePrompt$, username$
+INPUT "How old are you? ", age
+INPUT "Where are you from? ",location$
+
+PRINT ""
+PRINT "Nice to meet you ",username$,"! wow...you are much older than I am. I'm very sure that ",age," year(s) is a lot more than 1 year"
+PRINT "So, you're from ", location$, ". A very nice place!"
+PRINT ""
+PRINT "I'm from Albany. Here some information about where I'm from!"
+
+DATA "New York", 77.5, 97478
+READ state$, temperature%, population
+
+PRINT "Albany is the capital of ", state$, ". As of 2019, the population here is ", population, "."
+PRINT "The current temperature here is ", temperature%, "*F"
+
+PRINT ""
+PRINT "Here's some really random functions I can perform and have already done for you"
+PRINT ""
+PRINT "A random integer is ", randomInt
+PRINT "The 3 leftmost characters of the word Washington is ", leftTest$
+PRINT "The 6 rightmost characters of the word Washington is ", RIGHT$("Washington",6)
+PRINT "Look at the word I've extracted from the word Washington :D. It's: ", midTest$
+PRINT "Integer 5184423300 to String because I can! ", NUM$(518442330)
+PRINT "Float 3.14159265358979 to String because I also can! ", floatStr$
+PRINT "String to Integer because why not! ", VAL("518442330")
+PRINT "String to Float because YESSSSSS! ", valFloat%
+PRINT "Another word in the middle of another word (Albany)! ", MID$(word$,2,3)
+
+PRINT ""
+PRINT "On top of that I can do basic addition, subtraction, multiplication and division on Integers and Floats :D Wooohooo!"
+PRINT "Did you know that 2 + 2 equals ", 2+2," and that 2 * 2 also equals ", 2 * 2, "? Math is so cool!"
+PRINT "Wow look at that! 1000 / 100 equals ", 1000 / 100
+PRINT "OH WOW, 1 - 1 equals ", 1 - 1, " and 1 - -1 equals ", 1 - -1
+PRINT "I can also perform orders of operations! (3.14 + 3.14) * 3.14 = ", (3.14 + 3.14) * 3.14
+PRINT "Here's another example! 2 * (3 + 3) = ", 2 * (3 + 3)
+
+aa = 10
+b = aa+10
+c% = 3.14152
+d% = c%*c%
+
+PRINT "Adding integer variables? No problem. Allow me to demonstrate. aa = 10 and b = aa + 10. b equals ",b," and aa + b equals ",aa+b
+PRINT "Whats that? You want to see floats? No problem. c% = 3.14152 and d% = c% * c%. d% equals ",d%," and c% + d% equals ",c%+d%
+
+e = 10
+f = e
+PRINT "Copying variables :D. e = 10, f = e, therefore f = ",f
+
+PRINT ""
+PRINT "Testing more complex Math expressions"
+y% = 2.2
+b% = 3.2
+a = 2
+x = a+a+a+a+a+a+a+a
+PRINT "Value of ((y%+b%)*b%)+(y%*8.8) is: ",((y%+b%)*b%)+(y%*8.8)
+PRINT "x = a+a+a+a+a+a+a+a, therefore x is : ", x
+PRINT "Passed Complex Math expressions"
+
+PRINT ""
+PRINT "Start FOR Test [Counting from 1 -> 10 by 1s]"
+FOR a = 1 TO 10
+PRINT "Counting from 1-10: ", a
+NEXT a
+PRINT "Passed First FOR Test"
+
+PRINT ""
+PRINT "Start Second FOR Test [Counting from 10 -> 1 by -1s]"
+FOR a = 10 TO 1 STEP -1
+PRINT "Counting from 10-1: ", a
+NEXT a
+PRINT "Passed Second FOR Test"
+
+PRINT ""
+PRINT "Start Third FOR Test [Counting from 10 -> 49 by 10s]"
+FOR a = 10 TO 49 STEP 10
+PRINT "Counting from 10-49: ", a
+NEXT a
+PRINT "Passed Third FOR Test"
+
+PRINT ""
+PRINT "Start GOSUB Test"
+F = 32
+FtoC: C = 5 * (F - 32) / 9
+PRINT F,"*F is equal to ",C,"*C"
+RETURN
+F = 212
+GOSUB FtoC
+PRINT "Passed GOSUB Test"
+
+PRINT ""
+PRINT "Start Complex GOSUB Test"
+gosub1: GOSUB gosub2
+RETURN
+GOSUB gosub1
+gosub2: PRINT "gosub2 Label"
+RETURN
+PRINT "Passed Complex GOSUB Test"
+
+a = -5
+PRINT ""
+PRINT "Start IF/THEN Test"
+ifThenTest: PRINT "IF THEN Testing (LessThanEquals)"
+a = a + 1
+IF a <= 0 THEN ifThenTest
+PRINT "Passed IF/THEN Test (LessThanEquals)"
+
+y% = 2.2
+b% = 3.2
+z% = ((y%+b%)*b%)+(y%*8.8)
+PRINT ""
+PRINT "START IF/THEN Test with Complex Float MathOps (using LessThan)"
+ifThenTest2: PRINT "IF THEN with Floats"
+b% = b% + 0.1
+z% = z% + 1.0
+IF z% < 40.0 THEN ifThenTest2
+PRINT "Passed IF/THEN with Complex Floats MathOps (using LessThan)"
+
+PRINT ""
+PRINT "Start IF THEN testing with Complex Integer MathOps (using LessThan)"
+a = 2
+x = a+a+a+a+a+a+a+a
+ifThenTest3: PRINT "IF THEN with Complex Integer MathOps"
+x = x + 1
+IF x < 25 THEN ifThenTest3
+PRINT "Passed IF/THEN with Complex Integer MathOps (using LessThan)"
+
+PRINT ""
+PRINT "Start IF THEN testing (GreaterThan)"
+a = 5
+ifThenTest4: PRINT "IF THEN testing using greater than"
+a = a - 1
+IF a > 0 THEN ifThenTest4
+PRINT "Passed IF/THEN with GreaterThan"
+
+PRINT ""
+PRINT "Start IF THEN testing (GreaterThanEquals)"
+a = 5
+ifThenTest5: PRINT "IF THEN testing using greater than equals"
+a = a - 1
+IF a >= 0 THEN ifThenTest5
+PRINT "Passed IF/THEN with GreaterThanEquals"
+
+PRINT ""
+PRINT "Start IF THEN testing (NotEquals)"
+a = 0
+ifThenTest6: PRINT "IF THEN testing using not equals"
+a = a + 1
+IF a <> 5 THEN ifThenTest6
+PRINT "Passed IF/THEN with NotEquals"
+
+PRINT ""
+PRINT "Start IF THEN testing (Equals)"
+a = -1
+ifThenTest7: PRINT "IF THEN testing using equals"
+a = a + 1
+IF a = 0 THEN ifThenTest7
+PRINT "Passed IF/THEN with Equals"
